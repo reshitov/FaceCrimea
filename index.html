@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>События в крыму</title>
+    <link rel ="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <div id="logo" onClick = "slowCsroll('#top')">
+            <span>Крым в событиях и лицах! </span>
+        </div>
+        <div id="about">
+            <a href = "#" title="Театр" onClick ="slowCsroll('#main')">Театр</a>
+            <a href = "#" onClick ="slowCsroll('#overview')" title="Городская афиша">Городская афиша</a>
+            <a href = "#" onClick ="slowCsroll('#contacts')">Контакты</a>
+            <a href = "#" onClick ="slowCsroll('#sobutiu')">События</a>
+
+
+        </div>
+    </header>
+
+    <div id="top">
+        <h1>Самые важные события</h1>
+        <h3>Культура Крыма!</h3>
+    </div>
+
+    <div id="main">
+        <div id="intro">
+            <h2>Самая свежая афиша</h2>
+            <span>Большой выбор кинотеатров!</span>
+        </div>
+        <div id="text">
+            <span>Крым – самое удивительное и прекрасное место на земле.
+                 Я очень люблю свой край и горжусь тем, что тут родилась.
+                 Природа в Крыму самая красивая, она хороша в любое время года.</span>
+        </div>
+    </div>
+
+    <div id="overview">
+        <h2>Самые важные события!</h2>
+            <h4>Предстоящие события в Симферополе</h4>
+             <div id="img">
+                <img src ="https://www.meganomkino.ru/system/event_fronts/main_teasers/2019/11/26/square_portrait/718222.jpg?1576691308"; alt="">
+                
+                <span>Звёздные войны: Скайуокер</span>
+             </div>
+             <div id="img">
+                <img src ="http://www.circtezikova.ru/img/tmp/img_elka_v_cirke_2019_300_432.jpg"; alt="">
+                
+                <span>Елка в цирке</span>
+             </div>
+             <div id="img">
+                <img src ="https://simferopol.kassa24.ru/upload/event/307x429/4/7/47ae6caf29872ae728d53b20b3b8f0a0.jpg"; alt="">
+                
+                <span>ЛЕОНАРДО</span>
+             </div>
+             <div id="img">
+                <img src ="https://simferopol.kassa24.ru/upload/event/307x429/6/a/6ae107c8b25a1a6b851978ebabb5594f.jpg"; alt="">
+                
+                <span>НОВОГОДНИЙ ГАЛА-КОНЦЕРТ</span>
+             </div>    
+    </div>
+    <div id="contacts">
+       <center><h5>Обратная связь</h5></center>
+        <form id="form_input">
+            <label for="name">Имя <span>*</span></label><br>
+            <input type="text" placeholder="Введите имя" name ="name" id="name"><br>
+            <label for="email">Ваша почта <span>*</span></label><br>
+            <input type="email" placeholder="Введите email" name ="email" id="email"><br>
+            <label for="message">Сообщение<span>*</span></label><br>
+            <textarea placeholder="Введите ваше сообщение" name="message" id="message"></textarea>
+            <div id="mess_send" class="btn">Отправить</div>
+        </form>
+    </div>
+    
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+    function slowCsroll(id){
+        $('html','body').animate({
+            scrollTop: $(id).offset().top
+
+        }, 500);
+    }
+    $(document).on("scroll", function(){//Отслеживания события scroll,в функции прописываем, что будет происходить
+        if($(window).scrollTop()===0) //scrollTop проскроленное растояние сверху,
+        $("header").removeClass("fixed");
+        else
+        $("header").attr("class","fixed");
+
+    });
+    </script>
+</body>
+</html>
